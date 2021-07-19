@@ -1,0 +1,22 @@
+{
+  "feature_1": [
+    {
+      "id": 1,
+      "customkey1": "tenant",
+      "customval1": "tenant1",
+      "fval1": "true"
+    },
+    {
+      "id": 2,
+      "customkey1": "app",
+      "customval1": "app1",
+      "fval1": "true"
+    },
+    {
+      "id": 3,
+      "customkey1": "tenant",
+      "customval1": "tenant2",
+      "fval1": "true"
+    }
+  ]
+}

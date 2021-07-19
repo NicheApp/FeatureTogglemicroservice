@@ -1,0 +1,81 @@
+{
+  "features": [
+    {
+      "id": 2,
+      "name": "FEATURE 1",
+      "customkey": "",
+      "customval": "",
+      "fval": "FALSE"
+    },
+    {
+      "id": 3,
+      "name": "FEATURE 2",
+      "customkey": "",
+      "customval": "",
+      "fval": "FALSE"
+    },
+    {
+      "id": 4,
+      "name": "FEATURE 3",
+      "customkey": "",
+      "customval": "",
+      "fval": "FALSE"
+    },
+    {
+      "id": 5,
+      "name": "feature 5",
+      "customkey": "jkfsjflksjf,",
+      "customval": "dnkfklskf",
+      "fval": "false"
+    },
+    {
+      "id": 6,
+      "name": "feature10",
+      "customkey": "",
+      "customval": "",
+      "fval": "true"
+    },
+    {
+      "id": 7,
+      "featureName": "f20",
+      "customkey": "",
+      "customval": "",
+      "active": "true"
+    },
+    {
+      "id": 8,
+      "featureName": "f90",
+      "customkey": "",
+      "customval": "",
+      "active": "false"
+    },
+    {
+      "id": 9,
+      "featureName": "f11",
+      "customkey": "",
+      "customval": "",
+      "active": "true"
+    },
+    {
+      "id": 10,
+      "featureName": "f1",
+      "customkey": "",
+      "customval": "",
+      "active": "true"
+    },
+    {
+      "id": 11,
+      "featureName": "f2",
+      "customkey": "",
+      "customval": "",
+      "active": "true"
+    },
+    {
+      "id": 12,
+      "featureName": "f2",
+      "customkey": "",
+      "customval": "",
+      "active": "false"
+    }
+  ]
+}
