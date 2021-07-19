@@ -43,10 +43,13 @@ public class ToggleService {
 				else {
 
 					effectiveConfig.put(
+			               
 							ffe.getFeatureName() + "-" + ffe.getCustomLabel() + "#." + ffe.getCustomLabelValue(),
 							ffe.isActive());
+					System.out.println("Inside table "+ffe.getFeatureName() + "-" + ffe.getCustomLabel() + "#." + ffe.getCustomLabelValue());
 				}
 //f1-tenant#.tenant1
+				
 			}
 			Comparator<CustomCriteria> compareByCustomLabel = (CustomCriteria ol, CustomCriteria o2) -> ol
 					.getCustomLabel().compareTo(o2.getCustomLabel());
@@ -61,13 +64,22 @@ public class ToggleService {
 				StringBuilder values = new StringBuilder();
 				values.append("#");
 
-			//	for (int i = 0; i < criteriaSize; i++) {
+			/*	for (int i = 0; i < criteriaSize; i++) {
 
 					keys.append("-" + searchCriteria.getCustomcriteria().get(criteriaSize-1).getCustomLabel());
 					values.append("." + searchCriteria.getCustomcriteria().get(criteriaSize-1).getCustomLabelValue());
 
-				//}
+				}*/
+				
+				for (int i = 0; i < criteriaSize; i++) {
+
+					keys.append("-" + searchCriteria.getCustomcriteria().get(i).getCustomLabel());
+					values.append("." + searchCriteria.getCustomcriteria().get(i).getCustomLabelValue());
+
+				}
 				keys.append(values);
+				
+				System.out.println("inside criteria"+keys.toString());
 
 				if (null != effectiveConfig.get(keys.toString())) {
 					return effectiveConfig.get(keys.toString());

@@ -5,6 +5,7 @@ import java.util.List;
 public class SearchCriteria {
 	private String featureName;
 	private List<CustomCriteria> customcriteria;
+
 	
 	public SearchCriteria(String featureName,List<CustomCriteria> customcriteria){
 		this.featureName=featureName;

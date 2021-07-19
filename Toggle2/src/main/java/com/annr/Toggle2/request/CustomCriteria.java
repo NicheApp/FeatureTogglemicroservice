@@ -4,6 +4,8 @@ public class CustomCriteria {
 	private String customLabel;
 	private String customLabelValue;
 	
+	
+	
 	public CustomCriteria(String customLabel,String customLabelValue){
 		this.customLabel=customLabel;
 		this.customLabelValue=customLabelValue;
