@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,8 +91,23 @@ for(int i=0;i<rules.size();i++){
 	
 	@PostMapping(path = "/singlerule",consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)	
 	public void addsingleRule(@RequestBody Singlerule sr){
-		
+		System.out.println(sr.getActive()+"----------------"+sr.getKey()+"---"+sr.getValue()+"---"+sr.getFeatureName());
 		togglerepo.save(new Togglemodel(sr.getFeatureName(),sr.getKey(),sr.getValue(),sr.getActive()));
+	
+	}
+	
+	@GetMapping(path = "/getfeaturesbyname/{name}",consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)	
+	public List<Togglemodel> getfeaturesbyname(@PathVariable String name){
+	
+		return togglerepo.findbyfeature(name);
+		
+	}
+	@PostMapping(path = "/updaterule",consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)	
+	public void updateRules(@RequestBody Singlerule sr){
+		System.out.println(sr.getActive()+"----------------"+sr.getKey()+"---"+sr.getValue()+"---"+sr.getFeatureName());
+		
+		togglerepo.Updateactive(sr.getActive(),sr.getFeatureName(),sr.getKey(),sr.getValue());
+		
 	
 	}
 	
