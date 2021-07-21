@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.annr.Toggle2.model.Togglemodel;
+import com.annr.Toggle2.model.usermodel;
 import com.annr.Toggle2.repository.Togglerepository;
+import com.annr.Toggle2.repository.usersrepository;
 import com.annr.Toggle2.request.Feature;
 import com.annr.Toggle2.request.Rule;
 import com.annr.Toggle2.request.SearchCriteria;
@@ -34,6 +36,9 @@ public class FeatureBits {
 
 	@Autowired
 	public Togglerepository togglerepo;
+	
+	@Autowired
+	public usersrepository userrepo;
 	
 	@Autowired
 	private ToggleService toggleservice;
@@ -111,7 +116,12 @@ for(int i=0;i<rules.size();i++){
 	
 	}
 	
-	
+	@GetMapping(path = "/getusers",consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public List<usermodel> getusers(){
+
+		return userrepo.findbyusers(null);
+		
+	}
 
 	
 	}
