@@ -12,6 +12,7 @@ import Navbar from "./components/layout/Navbar";
 import myform from "./components/pages/myform";
 import dumform from "./components/pages/dummy";
 import fd from "./components/pages/fetch";
+import project from "./components/pages/projectslist"
 import edituser from "./components/pages/Edituser";
 import viewuser from "./components/pages/view";
 import fonly from "./components/pages/featureonly";
@@ -28,9 +29,10 @@ function App() {
 
 	      <Switch>
 	      		<Route exact path="/" component={fd}/>
-	      		<Route exact path="/about/" component={dumform}/>
+				<Route exact path="/project" component={project}/>
+               <Route exact path="/about/*" component={dumform}/>
 	      		<Route exact path="/fonly" component={fonly}/>
-	      		<Route exact path="/f1only" component={f1only}/>
+	      		<Route exact path="/f1only/*" component={f1only}/>
 	      		<Route exact path="/edituser/:id" component={edituser}/>
 	      		<Route exact path="/viewuser/:id" component={viewuser}/>
 	      </Switch>

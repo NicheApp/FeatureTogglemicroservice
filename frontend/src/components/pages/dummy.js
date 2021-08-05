@@ -9,10 +9,13 @@ function shoot(){
 }
 
 const Dumform = () => {
+
   let history = useHistory();
+  const pathname = window.location.pathname;
+	const lastItem = pathname.substring(pathname.lastIndexOf('/') + 1);
   const [feature1, setFeature1] = useState({
     id: "",
-    featureName: "",
+    featureName: lastItem,
     key: "",
     value: "",  
     active: ""
@@ -56,7 +59,10 @@ const Dumform = () => {
 
 const handleSubmit = variables => {
   //const[featureName]= this.props.location.state.featureName;
-  const toInput = { featureName, key,value,active};
+var featureName=lastItem;
+var e = document.getElementById("ddlViewBy");
+    var active = e.value;
+  const toInput = {featureName, key,value,active};
   sampleFunc(toInput);
   shoot();
   //setName("");
@@ -65,27 +71,14 @@ const handleSubmit = variables => {
 };
 
 
-
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Add A Rule</h2>
+        <h2 className="text-center mb-4">Add Rule for {lastItem}</h2>
         <form onSubmit={e => onSubmit(e)}>
         <br></br>
-    
-    <div className="form-group" >
-      <input
-        type="text"
-        className="form-control form-control-lg"
-        placeholder="Enter feature name"
-        name="featureName"
-        value={featureName}
-        onChange={e => onInputChange(e)}
-      />
-    </div>
 
-        
-        <br></br>
+      
     
           <div className="form-group" >
             <input
@@ -112,14 +105,12 @@ const handleSubmit = variables => {
           
           <br></br>
           <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter True or False"
-              name="active"
-              value={active}
-              onChange={e => onInputChange(e)}
-            />
+    
+            <select id="ddlViewBy"  className="form-control form-control-lg">
+  <option value="true">true</option>
+  <option value="false" >false</option>
+ 
+</select>
           </div>
           <br></br>
           <button className="btn btn-primary btn-block" onClick={handleSubmit}>Add Feature</button>

@@ -76,6 +76,13 @@
       "customkey": "",
       "customval": "",
       "active": "false"
+    },
+    {
+      "id": 13,
+      "featureName": "user",
+      "customkey": "",
+      "customval": "",
+      "active": "true"
     }
   ]
 }

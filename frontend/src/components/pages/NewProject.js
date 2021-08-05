@@ -75,7 +75,7 @@ setproject[0]="fdfd";
 //getting list of projects
 
 const getData = async () => {
-  const response = await fetch("http://localhost:8080/toggle/getprojects", {
+  const response = await fetch("http://localhost:8080/toggle/getfeatures", {
     method: "GET", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -101,8 +101,6 @@ const getData = async () => {
   const handleSubmit = variables => {
     var e = document.getElementById("ddlViewBy");
     var active = e.value;
-    var x = document.getElementById("projectname");
-    var projectname = x.value;
      const toInput = { featureName, active,projectname};
   
     sampleFunc(toInput);
@@ -114,18 +112,10 @@ const getData = async () => {
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
+          
         <h2 className="text-center mb-4">Add Feature</h2>
         <form onSubmit={e => onSubmit(e)}>
         
-
-<select id="projectname"  className="form-control form-control-lg">
-
-{projects && projects.map((project, index) => ( 
-<option value={project.project}>{project.project}</option>
-))}
-
-</select>
-
 
           <br></br>
           <div className="form-group" >
@@ -142,17 +132,8 @@ const getData = async () => {
           
           
           <br></br>
-          <div className="form-group">
-          
-          <select id="ddlViewBy"  className="form-control form-control-lg">
-  <option value="true">true</option>
-  <option value="false" >false</option>
- 
-</select>
-          
-          </div>
-          <br></br>
-          <button className="btn btn-primary btn-block" onClick={handleSubmit}>Add Feature</button>
+         
+          <button className="btn btn-primary btn-block" onClick={handleSubmit}>Add Project</button>
         </form>
         <Typography style={{ margin: 7 }} variant="body1">
           Status: {message}
