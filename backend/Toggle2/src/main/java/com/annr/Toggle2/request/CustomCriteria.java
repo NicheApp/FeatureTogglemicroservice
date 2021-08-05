@@ -1,25 +1,27 @@
 package com.annr.Toggle2.request;
 
 public class CustomCriteria {
-	private String CustomLabel;
-	private String CustomLabelValue;
+	private String customLabel;
+	private String customLabelValue;
 	
-	public CustomCriteria(String customLabel,String CustomLabelValue){
-		this.CustomLabel=customLabel;
-		this.CustomLabelValue=CustomLabelValue;
+	
+	
+	public CustomCriteria(String customLabel,String customLabelValue){
+		this.customLabel=customLabel;
+		this.customLabelValue=customLabelValue;
 	}
 	
 	public String getCustomLabel() {
-		return CustomLabel;
+		return customLabel;
 	}
 	public void setCustomLabel(String customLabel) {
-		CustomLabel = customLabel;
+		customLabel = customLabel;
 	}
 	public String getCustomLabelValue() {
-		return CustomLabelValue;
+		return customLabelValue;
 	}
 	public void setCustomLabelValue(String customLabelValue) {
-		CustomLabelValue = customLabelValue;
+		customLabelValue = customLabelValue;
 	}
 	
 
